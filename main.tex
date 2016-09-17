@@ -1,0 +1,119 @@
+% LaTeX resume using res.cls
+\documentclass[margin]{res}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\setlength{\textwidth}{5.1in} % set width of text portion
+
+\begin{document}
+
+% Center the name over the entire width of resume:
+ \moveleft.5\hoffset\centerline{\large\bf S. Cameron Will}
+% Draw a horizontal line the whole width of resume:
+ \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+% address begins here
+% Again, the address lines must be centered over entire width of resume:
+% The old address, centered
+%  \moveleft.5\hoffset\centerline{102 Pande Cir}
+%  \moveleft.5\hoffset\centerline{Cary, NC 27511}
+
+%  \moveleft.5\hoffset\centerline{(518) 273-0014 or (518) 272-6666}
+\address{{\bf Work Address} \\ 6303 Barfield Rd NE \\ Atlanta, GA 30328 \\
+        (404) 238-6039 \\ scwill@us.ibm.com}
+\address{{\bf Permanent Address} \\ 1337 Briarvista Way NE \\ Atlanta, GA 30329 \\
+        (919) 604-9444 \\ cameron@thewills.email}
+
+
+\begin{resume}
+ 
+\section{OBJECTIVE} To further the field of threat intelligence
+
+\section{EDUCATION} {\sl Major:} Computer Science, School of Engineering and Applied Science \\
+                      % \sl will be bold italic in New Century Schoolbook (or
+	              % any postscript font) and just slanted in
+		      %	Computer Modern (default) font
+               Univeristy of Virginia, Charlottesville, VA, 
+                May 2014 \\
+                Concentration: Computer Security, GPA: 3.0
+ 
+ 
+\section{COMPUTER \\ SKILLS} {\sl Languages \& Software:} Javascript, (X)HTML, Python,
+                 CSS, PHP, SQL(mssql, mysql), DB2\\
+                {\sl Operating Systems:}Linux (Ubuntu, Debian, openSUSE, Arch, Red Hat based systems), Windows, MacOS
+ 
+\section{EXPERIENCE}{\textbf{Staff Security Software Engineer}. IBM} \hfill August 2015 - Present
+\begin{itemize} \itemsep -2pt
+  \item Watson for Cybersecurity - Product Development Team Lead \& Senior Engineer
+  \item X-Force Exchange - North America Systems Operations
+\end{itemize}
+
+{\textbf{Security Software Engineer}. IBM} \hfill May 2014 - August 2015
+\begin{itemize} \itemsep -2pt
+  \item X-Force Exchange - Front-end and API development 
+  \item IDS/IPS Software Development and Support
+\end{itemize}
+
+{\textbf{Security Software Intern}. IBM} \hfill May 2013 - May 2014
+\begin{itemize} \itemsep -2pt
+	\item Worked on targeted research and software projects within the QA team within XForce. 
+	\item Rewrote the front-end and back-end of a global security research sensor network
+\end{itemize}
+
+{\textbf{Resident Advisor}. University of Virginia} \hfill August 2012 - May 2014
+\begin{itemize} \itemsep -2pt
+	\item Oversaw 36 residents over two academic years
+	\item Planned programs and facilitated academic integrity
+\end{itemize}
+
+{\textbf{Implus Footcare LLC}. Durham, NC}  \\
+	IT Development Associate \hfill August 2011 - August 2012
+	\begin{itemize} \itemsep -2pt %reduce space between items
+	\item Part-time work during the school year
+	\item Worked on targeted modular projects towards centralized data organization for company "supernet"
+	\item Helped to develop web applications for intra-company communication and collaboration
+	 \item Implemented project management tool and a continuous build system
+	\end{itemize}
+                IT Department Intern \hfill Summer 2010, Summer 2011
+                 \begin{itemize}  \itemsep -2pt %reduce space between items
+	     \item Created touchscreen Kiosk to extend multilingual HR resources to factory employees
+	      \item Deployed and configured computer software and hardware
+	     \item Lead the effort to upgrade all employees to Windows 7
+	     \item PCI-DSS Compliance software research and implementation, including two-factor RSA authentication
+                 \end{itemize}
+                IT Summer Intern, Apex High Academy of Information Technology
+	    \hfill Summer 2009
+                 \begin{itemize}  \itemsep -2pt %reduce space between items
+                 \item Installed and configured new server room
+	      \item Integrated Active Directory with company intranet
+	      \item Deployed and configured computer software and hardware
+	      \item Assiting and facilitating IT for a company move, including data center migration
+                 \end{itemize}
+{\textbf{New Gen Web Design}} \hfill Aug 2008 - Aug 2011 \\
+                Co-Founder and Web Designer
+                 \begin{itemize}  \itemsep -2pt %reduce space between items
+                 \item Assessment of customer requirements and site planning
+                \item  Middleware tool selection and configuration
+	     \item Customer web site design and implementation
+	      \item Freelance coding work for various clients
+                \end{itemize}
+	
+\section{SPEAKING \\ ENGAGEMENTS}
+    IBM Interconnect 2016 - Integrating with IBM XForce Exchange APIs \hfill February 2016\\
+    \newline
+	Apex High School Baccalaureate Ceremony. Apex, North Carolina. \hfill June 6, 2010 \\ \newline
+	The Importance of Career Academies in High School Career \hfill March 29, 2010\\
+	Preparedness. North Carolina Lieutenant Governor's Joining\\
+	Our Businesses and Schools (JOBS) Commission.\\ \newline
+	The Benefit Of Career Academies. Yadkin Valley Career \hfill February 8, 2010\\
+	Academy Promotion. Apex High School \\ \newline
+	The Value Of Student Interns To Small Businesses. \hfill December 15, 2009 \\
+	Thriving Instead of Surviving: How One Local Business Beat\\
+	the Recession, Morrisville Chamber of Commerce \\ \newline
+	The Value Of Internships To High School Students. \hfill September 22, 2009 \\ 
+	North Carolina State University \\ \newline
+	The Importance of Career Academies in High School Career \hfill June 12, 2009 \\
+	Preparedness. North Carolina State Superintendent’s Career\\
+	Ready Commission, North Carolina Biotechnology Center.
+
+
+\end{resume}
+\end{document}
