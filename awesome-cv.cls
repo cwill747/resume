@@ -10,7 +10,7 @@
 %
 % Notes:
 % 1) This class file defines the structure and layout of the template file (cv.tex, resume.tex).
-% 2) It has been written in such a way that under most circumstances you 
+% 2) It has been written in such a way that under most circumstances you
 % should not need to edit it.
 %
 % Class license:
@@ -498,7 +498,7 @@
   \fancyfoot{}
   \fancyfoot[L]{\footerstyle{#1}}
   \fancyfoot[C]{\footerstyle{#2}}
-  \fancyfoot[R]{\footerstyle{#3}} 
+  \fancyfoot[R]{\footerstyle{#3}}
 }
 
 % Define a section for CV
@@ -554,7 +554,6 @@
 % Define an entry of cv information
 % Usage: \cvmultientry{<company>}{<location>}{<description>}
 \newcommand*{\cvmultientry}[3]{%
-  \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -572,10 +571,11 @@
 % Define a subentry of cv information
 % Usage: \cvsubentry{<position>}{<date>}{<description>}
 \newcommand*{\cvsubentry}[3]{%
+  \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-      \entrypositionstyle{#1} & \entrydatestyle{#2} \\
+    \entrypositionstyle{#1} & \entrydatestyle{#2} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
   \end{tabular*}
 }
@@ -664,7 +664,7 @@
   \ifthenelse{\isundefined{\@lettertitle}}
     {}
     {\lettertitlestyle{\@lettertitle} \\}
-  \lettertextstyle{\@letteropening} 
+  \lettertextstyle{\@letteropening}
 }
 
 % Define a closing of the cover letter
