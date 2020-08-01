@@ -16,4 +16,8 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           root_file: resume.tex
-          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode  
+          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - uses: actions/upload-artifact@v2
+        with:
+          name: resume.pdf
+          path: resume.pdf  
