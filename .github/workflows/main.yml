@@ -20,4 +20,16 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: resume.pdf
-          path: resume.pdf  
+          path: resume.pdf
+      - name: Create png from resume
+        run: |
+          convert -density 576 resume.pdf resume.png
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: Cameron Will
+          author_email: cameron@thewills.net
+          message: "Automatic update of resume.pdf"
+          add: "resume.*"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
