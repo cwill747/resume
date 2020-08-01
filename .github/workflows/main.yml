@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: resume.tex
+          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - name: Create png from resume
+        run: |
+          rm resume.png
+          sudo sed -i 's#<policy domain="coder" rights="none" pattern="PDF" />#<policy domain="coder" rights="read|write" pattern="PDF" />#' /etc/ImageMagick-6/policy.xml
+          convert -density 576 resume.pdf resume.png
+      - uses: actions/upload-artifact@v2
+        with:
+          name: resume.pdf
+          path: resume.pdf      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: resume.png
+          path: resume.png
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: Cameron Will
+          author_email: cameron@thewills.net
+          message: "Automatic update of resume.pdf"
+          add: "resume.*"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
