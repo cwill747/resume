@@ -17,13 +17,18 @@ jobs:
         with:
           root_file: resume.tex
           args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - name: Create png from resume
+        run: |
+          rm resume.png
+          convert -density 576 resume.pdf resume.png
       - uses: actions/upload-artifact@v2
         with:
           name: resume.pdf
-          path: resume.pdf
-      - name: Create png from resume
-        run: |
-          convert -density 576 resume.pdf resume.png
+          path: resume.pdf      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: resume.png
+          path: resume.png
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
