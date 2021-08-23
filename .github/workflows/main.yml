@@ -11,12 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: dante-ev/latex-action@master
+        uses: dante-ev/latex-action@latest
         with:
           root_file: resume.tex
           args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - name: Install ghostscript
+        run: sudo apt install ghostscript
+      - name: Change ImageMagick security policy
+        run: |
+          DQT='"'
+          SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
+          RPL="rights=${DQT}read\|write${DQT} pattern=${DQT}PDF${DQT}"
+          sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
       - name: Create png from resume
         run: |
           rm resume.png
@@ -25,17 +33,15 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: resume.pdf
-          path: resume.pdf      
+          path: resume.pdf
       - uses: actions/upload-artifact@v2
         with:
           name: resume.png
           path: resume.png
       - name: Commit changes
-        uses: EndBug/add-and-commit@v4
+        uses: EndBug/add-and-commit@v7
         with:
           author_name: Cameron Will
           author_email: cameron@thewills.net
           message: "Automatic update of resume.pdf"
           add: "resume.*"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
