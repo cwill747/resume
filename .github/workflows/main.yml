@@ -11,12 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: dante-ev/latex-action@latest
+        uses: actions/checkout@v4
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v2
         with:
-          root_file: resume.tex
-          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+          packages: >
+            latex latex-bin latex-bin-dev xelatex
+      - name: Compile LaTeX document
+        run: xelatex resume.tex
       - name: Install ghostscript
         run: sudo apt install ghostscript
       - name: Change ImageMagick security policy
