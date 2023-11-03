@@ -27,7 +27,7 @@ jobs:
           sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
       - name: Create png from resume
         run: |
-          rm resume.png
+          rm -f resume.png
           sudo sed -i 's#<policy domain="coder" rights="none" pattern="PDF" />#<policy domain="coder" rights="read|write" pattern="PDF" />#' /etc/ImageMagick-6/policy.xml
           convert -density 576 resume.pdf resume.png
       - uses: actions/upload-artifact@v2
