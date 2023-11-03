@@ -29,19 +29,23 @@ jobs:
         run: |
           rm -f resume.png
           sudo sed -i 's#<policy domain="coder" rights="none" pattern="PDF" />#<policy domain="coder" rights="read|write" pattern="PDF" />#' /etc/ImageMagick-6/policy.xml
-          convert -density 576 resume.pdf resume.png
+          convert -density 192 resume.pdf -threshold 50% -type bilevel resume.png
       - uses: actions/upload-artifact@v2
         with:
           name: resume.pdf
           path: resume.pdf
       - uses: actions/upload-artifact@v2
         with:
-          name: resume.png
-          path: resume.png
+          name: resume-0.png
+          path: resume-0.png
+      - uses: actions/upload-artifact@v2
+        with:
+          name: resume-1.png
+          path: resume-1.png
       - name: Commit changes
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
           author_name: Cameron Will
           author_email: cameron@thewills.net
           message: "Automatic update of resume.pdf"
-          add: "resume.*"
+          add: '["resume.pdf", "resume-0.png", "resume-1.png"]'
