@@ -1,5 +1,7 @@
 %!TEX TS-program = xelatex
+%!TEX program = xelatex
 %!TEX encoding = UTF-8 Unicode
+%!TeX root=root-file
 % Awesome CV LaTeX Template
 %
 % This template has been downloaded from:
@@ -46,36 +48,18 @@
 %%% Needed to divide into several files
 \usepackage{import}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Personal Data
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Essentials
-\name{S. Cameron}{Will}
-\position{Senior Software Engineer{\enskip\cdotp\enskip}Threat Intelligence{\enskip\cdotp\enskip}Cybersecurity Augmented Intelligence}
-\address{Raleigh, NC, USA | US Citizen}
-%%% Social
-\email{cameron@thewills.net}
-\homepage{cwill.us}
-\github{cwill747}
-\linkedin{cameronwill}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
-%\makecvfooter
-%  {\today}
-%  {S. Cameron Will~~~·~~~Résumé}
-%  {}
-
 \begin{document}
+\include{resume/essentials}
+
 %%% Make a header for CV with personal data
 \makecvheader
 
 %%% Import contents
 \import{\sectiondir}{summary.tex}
-\import{\sectiondir}{skills.tex}
+% \import{\sectiondir}{skills.tex}
 \import{\sectiondir}{experience.tex}
 \import{\sectiondir}{education.tex}
 % \newpage

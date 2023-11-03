@@ -44,22 +44,9 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-
 %-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-%\photo[circle,noedge,left]{profile}
-\name{Cameron}{Will}
-\position{Software Engineer{\enskip\cdotp\enskip}Threat Intelligence}
-\address{Raleigh, NC, USA | US Citizen}
-%%% Social
-\email{cameron@thewills.net}
-\homepage{cwill.us}
-\github{cwill747}
-\linkedin{cameronwill}
-
+\begin{document}
+\include{resume/essentials}
 %-------------------------------------------------------------------------------
 %	LETTER INFORMATION
 %	All of the below lines must be filled out
@@ -78,11 +65,6 @@
 \letterclosing{Warm Regards,}
 % Any enclosures with the letter
 \letterenclosure[Attached]{Curriculum Vitae}
-
-
-%-------------------------------------------------------------------------------
-\begin{document}
-
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader[R]
