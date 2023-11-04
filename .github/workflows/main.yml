@@ -30,15 +30,15 @@ jobs:
           rm -f resume.png
           sudo sed -i 's#<policy domain="coder" rights="none" pattern="PDF" />#<policy domain="coder" rights="read|write" pattern="PDF" />#' /etc/ImageMagick-6/policy.xml
           convert -density 576 resume.pdf resume.png
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: resume.pdf
           path: resume.pdf
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: resume-0.png
           path: resume-0.png
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: resume-1.png
           path: resume-1.png
