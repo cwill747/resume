@@ -36,16 +36,12 @@ jobs:
           path: resume.pdf
       - uses: actions/upload-artifact@v3
         with:
-          name: resume-0.png
-          path: resume-0.png
-      - uses: actions/upload-artifact@v3
-        with:
-          name: resume-1.png
-          path: resume-1.png
+          name: resume.png
+          path: resume.png
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
           author_name: Cameron Will
           author_email: cameron@thewills.net
           message: "Automatic update of resume.pdf"
-          add: '["resume.pdf", "resume-0.png", "resume-1.png"]'
+          add: '["resume.pdf", "resume.png"]'
